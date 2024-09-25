@@ -75,6 +75,7 @@ public class BinarySearch {
 
     /**
      * 二分查找-平衡版
+     *
      * @param a
      * @param target
      * @return
@@ -98,4 +99,101 @@ public class BinarySearch {
      * i 指向的参与，并且就是要把 i 逼到要查找的值上
      * 最好情况增加了，最坏情况减少了
      */
+
+    /**
+     * 二分查找-Leftmost
+     *
+     * @param a
+     * @param target
+     * @return
+     */
+    public static int binarySearchLeftmost1(int[] a, int target) {
+        int i = 0, j = a.length - 1;
+        int candidate = -1;
+        while (i <= j) {
+            int m = (i + j) >>> 1;
+            if (target < a[m]) {
+                j = m - 1;
+            } else if (a[m] < target) {
+                i = m + 1;
+            } else {
+                // 记录后选位置
+                candidate = m;
+                j = m - 1;
+            }
+        }
+
+        return candidate;
+    }
+
+    /**
+     * 二分查找-Leftmost
+     *
+     * @param a
+     * @param target
+     * @return: 返回 >= target 的最靠左索引
+     */
+    public static int binarySearchLeftmost2(int[] a, int target) {
+        int i = 0, j = a.length - 1;
+        while (i <= j) {
+            int m = (i + j) >>> 1;
+            if (target <= a[m]) {
+                j = m - 1;
+            } else {
+                i = m + 1;
+            }
+        }
+
+        return i;
+    }
+
+    /**
+     * 二分查找-Rightmost
+     *
+     * @param a
+     * @param target
+     * @return
+     */
+    public static int binarySearchRightmost1(int[] a, int target) {
+        int i = 0, j = a.length - 1;
+        int candidate = -1;
+        while (i <= j) {
+            int m = (i + j) >>> 1;
+            if (target < a[m]) {
+                j = m - 1;
+            } else if (a[m] < target) {
+                i = m + 1;
+            } else {
+                // 记录后选位置
+                candidate = m;
+                j = m + 1;
+            }
+        }
+
+        return candidate;
+    }
+
+    /**
+     * 二分查找-Rightmost
+     *
+     * @param a
+     * @param target
+     * @return: 返回 <= target 的最靠右索引
+     */
+    public static int binarySearchRightmost2(int[] a, int target) {
+        int i = 0, j = a.length - 1;
+
+        while (i <= j) {
+            int m = (i + j) >>> 1;
+            if (target < a[m]) {
+                j = m - 1;
+            } else {
+                j = m + 1;
+            }
+        }
+
+        return i - 1;
+    }
+
+
 }
