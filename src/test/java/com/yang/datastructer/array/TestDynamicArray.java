@@ -1,8 +1,14 @@
 package com.yang.datastructer.array;
 
 import com.yang.datastructure.array.DynamicArray;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.w3c.dom.stylesheets.LinkStyle;
 
+import static org.junit.jupiter.api.Assertions.*;
+
+import java.util.List;
 import java.util.function.Consumer;
 
 public class TestDynamicArray {
@@ -68,6 +74,31 @@ public class TestDynamicArray {
         dynamicArray.addLast(4);
 
         dynamicArray.stream().forEach(System.out::println);
+    }
+
+    @Test
+    @DisplayName("测试删除")
+    public void test5() {
+        DynamicArray dynamicArray = new DynamicArray();
+        dynamicArray.addLast(1);
+        dynamicArray.addLast(2);
+        dynamicArray.addLast(3);
+        dynamicArray.addLast(4);
+        dynamicArray.addLast(5);
+
+        int removed = dynamicArray.remove(2);
+        assertEquals(3, removed);
+        dynamicArray.stream().forEach(System.out::println);
+    }
+
+    @Test
+    @DisplayName("测试扩容")
+    public void test6() {
+        DynamicArray dynamicArray = new DynamicArray();
+        for (int i = 0; i < 9; i++) {
+            dynamicArray.addLast(i + 1);
+        }
+        dynamicArray.foreach(System.out::println);
     }
 
 }

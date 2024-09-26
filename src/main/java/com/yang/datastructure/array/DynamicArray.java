@@ -12,7 +12,7 @@ public class DynamicArray implements Iterable<Integer> {
 
     private int size;  // 逻辑大小，有效内容数
     private int capacity = 8;  // 容量
-    private int[] array = new int[capacity];
+    private int[] array = {};
 
     /**
      * 向最后位置 [size] 添加元素
@@ -33,12 +33,50 @@ public class DynamicArray implements Iterable<Integer> {
      */
     public void add(int index, int element) {
 
+        checkAndGrow();
+
+
+        // 添加逻辑
         if (index >= 0 && index < size) {
             System.arraycopy(array, index, array, index + 1, size - index);
         }
 
         array[index] = element;
         size++;
+
+    }
+
+    /**
+     * 检查容量，必要时扩容
+     */
+    private void checkAndGrow() {
+
+        // 容量检查
+        if (size == 0) {
+            array = new int[capacity];
+        } else if (size == capacity) {
+            // 进行扩容 1.5, 1.618 , 2
+            capacity += capacity >> 1;
+
+            int[] newArray = new int[capacity];
+            System.arraycopy(array, 0, newArray, 0, size);
+            array = newArray;
+        }
+    }
+
+    /**
+     * 删除元素
+     * @param index: 删除元素的索引
+     * @return: 被删除的元素
+     */
+    public int remove(int index) {  // 假设索引位置是有效的 [0, size)
+        int removed = array[index];
+
+        if (index < size - 1) {
+            System.arraycopy(array, index+1, array, index, size - index - 1);
+        }
+        size--;
+        return removed;
 
     }
 
