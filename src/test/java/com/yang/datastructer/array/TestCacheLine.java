@@ -1,6 +1,9 @@
 package com.yang.datastructer.array;
 
+import org.junit.jupiter.api.Test;
 import org.springframework.util.StopWatch;
+
+import java.util.Arrays;
 
 public class TestCacheLine {
 
@@ -49,5 +52,39 @@ public class TestCacheLine {
         sw.stop();
 
         System.out.println(sw.prettyPrint());
+    }
+
+    @Test
+    public void testlc() {
+
+        int[] nums1 = {1,2,3,0,0,0};
+        int[] nums2 = {2,5,6};
+        int m = 3;
+        int n = 3;
+
+         int i = 0;
+        int j = 0;
+        int[] sorted = new int[m+n];
+        while (i<m || j<n) {
+            int tmp = 0;
+            if(i==m) {
+                tmp = nums2[j++];
+            } else if (j == n ) {
+                tmp = nums1[i++];
+            } else if(nums1[i] < nums2[j]) {
+                tmp = nums1[i++];
+            } else {
+                tmp = nums2[j++];
+            }
+
+            sorted[i + j -1] = tmp;
+        }
+
+        // for(i = 0; i<m+n; i++) {
+        //     nums1[i] = sorted[i];
+        // }
+
+        nums1 = sorted;
+        System.out.println(Arrays.toString(nums1));
     }
 }
