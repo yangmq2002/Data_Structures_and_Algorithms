@@ -134,11 +134,98 @@ public class SinglyLinkedList implements Iterable<Integer> {  // 整体
         Node p = findNode(index);
 
         if (p == null) {
-            throw new IllegalArgumentException(String.format("Index %d is out of bounds", index));
+            throw illegaIndex(index);
         }
 
         return p.value;
     }
+
+    private static IllegalArgumentException illegaIndex(int index) {
+        return new IllegalArgumentException(String.format("Index %d is out of bounds", index));
+    }
+
+    /**
+     * 向索引位置插入
+     * @param index: 索引
+     * @param value: 待插入值
+     * Throws: 找不到则抛异常
+     */
+    public void insert(int index, int value) {
+
+        if (index == 0) {
+            addFirst(value);
+            return;
+        }
+
+        Node prev = findNode(index - 1);  // 前一个节点
+
+        if(prev == null) {  // 找不到
+            throw illegaIndex(index);
+        }
+
+        prev.next = new Node(value, prev.next);
+
+    }
+
+    /**
+     * 删除第一个
+     * Throws: 找不到则抛异常
+     */
+    public void removeFirst() {
+        if (head == null) {
+            throw illegaIndex(0);
+        }
+
+        head = head.next;
+    }
+
+    public void remove(int index) {
+
+        if (index == 0) {
+            removeFirst();
+            return;
+        }
+
+        Node prev = findNode(index - 1);
+
+        if (prev == null) {
+            throw illegaIndex(index);
+        }
+
+        Node removed = prev.next;  // 被删除的节点
+
+        if(removed == null) {
+            throw illegaIndex(index);
+        }
+        prev.next = removed.next;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
 
