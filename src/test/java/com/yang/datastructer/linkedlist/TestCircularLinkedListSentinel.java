@@ -31,19 +31,19 @@ class TestCircularLinkedListSentinel {
         assertIterableEquals(List.of(4, 3, 2, 1), list);
     }
 
-//    @Test
-//    void removeFirst() {
-//        DoublyLinkedListSentinel list = getList();
-//        list.removeFirst();
-//        assertIterableEquals(List.of(2, 3, 4), list);
-//        list.removeFirst();
-//        assertIterableEquals(List.of(3, 4), list);
-//        list.removeFirst();
-//        assertIterableEquals(List.of(4), list);
-//        list.removeFirst();
-//        assertIterableEquals(List.of(), list);
-//        assertThrows(IllegalArgumentException.class, list::removeFirst);
-//    }
+    @Test
+    void removeFirst() {
+        CircularLinkedListSentinel list = getList();
+        list.removeFirst();
+        assertIterableEquals(List.of(2, 3, 4), list);
+        list.removeFirst();
+        assertIterableEquals(List.of(3, 4), list);
+        list.removeFirst();
+        assertIterableEquals(List.of(4), list);
+        list.removeFirst();
+        assertIterableEquals(List.of(), list);
+        assertThrows(IllegalArgumentException.class, list::removeFirst);
+    }
 
     @Test
     void addLast() {
@@ -57,41 +57,37 @@ class TestCircularLinkedListSentinel {
         list.addLast(2);
         list.addLast(3);
         list.addLast(4);
+        list.addLast(5);
         return list;
     }
 
-//    @Test
-//    void removeLast() {
-//        CircularLinkedListSentinel list = getList();
-//        list.removeLast();
-//        assertIterableEquals(List.of(1, 2, 3), list);
-//        list.removeLast();
-//        assertIterableEquals(List.of(1, 2), list);
-//        list.removeLast();
-//        assertIterableEquals(List.of(1), list);
-//        list.removeLast();
-//        assertIterableEquals(List.of(), list);
-//        assertThrows(IllegalArgumentException.class, list::removeLast);
-//    }
-//
-//    @Test
-//    void insert() {
-//        CircularLinkedListSentinel list = getList();
-//        list.insert(2, 5);
-//        assertIterableEquals(List.of(1, 2, 5, 3, 4), list);
-//        list.insert(5, 6);
-//        assertIterableEquals(List.of(1, 2, 5, 3, 4, 6), list);
-//        assertThrows(IllegalArgumentException.class, () -> list.insert(7, 7));
-//    }
-//
-//    @Test
-//    void remove() {
-//        DoublyLinkedListSentinel list = getList();
-//        list.remove(2);
-//        assertIterableEquals(List.of(1, 2, 4), list);
-//        assertThrows(IllegalArgumentException.class, () -> list.remove(10));
-//
-//        DoublyLinkedListSentinel list2 = new DoublyLinkedListSentinel();
-//        assertThrows(IllegalArgumentException.class, () -> list2.remove(0));
-//    }
+    @Test
+    void removeLast() {
+        CircularLinkedListSentinel list = getList();
+        list.removeLast();
+        assertIterableEquals(List.of(1, 2, 3), list);
+        list.removeLast();
+        assertIterableEquals(List.of(1, 2), list);
+        list.removeLast();
+        assertIterableEquals(List.of(1), list);
+        list.removeLast();
+        assertIterableEquals(List.of(), list);
+        assertThrows(IllegalArgumentException.class, list::removeLast);
+    }
+
+    @Test
+    void remove() {
+        CircularLinkedListSentinel list = getList();
+        list.removeByValue(1);
+        assertIterableEquals(List.of(2, 3, 4, 5), list);
+        list.removeByValue(2);
+        assertIterableEquals(List.of(3, 4, 5), list);
+        list.removeByValue(3);
+        assertIterableEquals(List.of(4, 5), list);
+        list.removeByValue(4);
+        assertIterableEquals(List.of(5), list);
+
+
+
+    }
 }
