@@ -127,11 +127,10 @@ public class BinarySearch {
     }
 
     /**
-     * 二分查找-Leftmost
      *
      * @param a
      * @param target
-     * @return: 返回 >= target 的最靠左索引
+     * @return 返回 >= target 的最靠左索引
      */
     public static int binarySearchLeftmost2(int[] a, int target) {
         int i = 0, j = a.length - 1;
@@ -188,7 +187,7 @@ public class BinarySearch {
             if (target < a[m]) {
                 j = m - 1;
             } else {
-                j = m + 1;
+                i = m + 1;
             }
         }
 
