@@ -1,4 +1,4 @@
-package com.yang.algorithm.recursion;
+package com.yang.algorithm.recursion_single;
 
 import java.util.Arrays;
 
