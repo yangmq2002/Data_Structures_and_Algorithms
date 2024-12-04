@@ -109,5 +109,21 @@ public class TestSinglyLinkedList {
         list.loop2(System.out::println);
     }
 
+     @Test
+    public void test(){
+        SinglyLinkedList list = new SinglyLinkedList();
+        list.addFirst(1);
+        list.addFirst(2);
+        list.addFirst(3);
+        list.addFirst(4);
+        list.addFirst(5);
+        list.loop3(value -> {
+            System.out.println("before:" + value);
+        }, value -> {
+            System.out.println("after:" + value);
+        });
+
+    }
+
 
 }

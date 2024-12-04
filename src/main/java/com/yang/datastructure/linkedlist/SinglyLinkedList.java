@@ -60,7 +60,7 @@ public class SinglyLinkedList implements Iterable<Integer> {  // 整体
     }
 
     /**
-     * 遍历列表1
+     * 遍历链表1
      */
     public void loop1(Consumer<Integer> consumer) {
         Node p = head;
@@ -71,7 +71,7 @@ public class SinglyLinkedList implements Iterable<Integer> {  // 整体
     }
 
     /**
-     * 遍历列表2
+     * 遍历链表2
      *
      * @param consumer: 要执行的操作
      */
@@ -79,6 +79,23 @@ public class SinglyLinkedList implements Iterable<Integer> {  // 整体
         for (Node p = head; p != null; p = p.next) {
             consumer.accept(p.value);
         }
+    }
+
+
+    /**
+     * 遍历链表3
+     */
+    public void loop3(Consumer<Integer> before, Consumer<Integer> after) {
+        recursion(head, before, after);
+    }
+
+    private void recursion(Node curr, Consumer<Integer> before, Consumer<Integer> after) { // 某个节点要执行的操作
+        if (curr == null) {
+            return;
+        }
+        before.accept(curr.value);
+        recursion(curr.next, before, after);
+        before.accept(curr.value);
     }
 
     /**
