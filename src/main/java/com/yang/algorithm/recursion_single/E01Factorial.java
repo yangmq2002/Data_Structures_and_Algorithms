@@ -3,7 +3,7 @@ package com.yang.algorithm.recursion_single;
 /**
  * 递归求阶乘
  */
-public class Factorial {
+public class E01Factorial {
     public static void main(String[] args) {
         System.out.println(f(5));
         System.out.println(f(4));
