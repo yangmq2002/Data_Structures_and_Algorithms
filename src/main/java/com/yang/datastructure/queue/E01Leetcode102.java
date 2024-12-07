@@ -45,7 +45,36 @@ public class E01Leetcode102 {
         return result;
     }
 
+    public List<List<Integer>> levelOrder1(TreeNode root) {
+        List<List<Integer>> result = new ArrayList<>();
 
+        if (root == null) return result;
+
+        LinkedList<TreeNode> queue = new LinkedList<>();
+        queue.addLast(root);
+        int c1 = 1;  // 当前层节点数
+        while (!queue.isEmpty()) {
+            List<Integer> level = new ArrayList<>();
+            int c2  = 0; // 下一层节点数
+            for (int i = 0; i<c1;i++) {
+                TreeNode n = queue.removeFirst();
+                level.add(n.val);
+                if(n.left != null) {
+                    queue.addLast(n.left);
+                    c2++;
+                }
+                if(n.right != null) {
+                    queue.addLast(n.right);
+                    c2++;
+                }
+            }
+
+            result.add(level);
+            c1 = c2;
+
+        }
+        return result;
+    }
 
     public static void main(String[] args) {
         TreeNode root = new TreeNode(
@@ -87,8 +116,9 @@ public class E01Leetcode102 {
 
             c1 = c2;
 
-
-
         }
+
+        List<List<Integer>> lists = new E01Leetcode102().levelOrder1(root);
+        System.out.println(lists);
     }
 }
