@@ -1,6 +1,5 @@
-package com.yang.datastructer.array;
+package com.yang.datastructure.array;
 
-import com.yang.datastructure.array.DynamicArray;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

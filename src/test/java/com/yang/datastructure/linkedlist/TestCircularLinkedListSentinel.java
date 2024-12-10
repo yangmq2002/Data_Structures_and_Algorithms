@@ -1,7 +1,5 @@
-package com.yang.datastructer.linkedlist;
+package com.yang.datastructure.linkedlist;
 
-import com.yang.datastructure.linkedlist.CircularLinkedListSentinel;
-import com.yang.datastructure.linkedlist.DoublyLinkedListSentinel;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;

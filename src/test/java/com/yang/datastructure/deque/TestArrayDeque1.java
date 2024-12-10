@@ -1,6 +1,5 @@
-package com.yang.datastructer.deque;
+package com.yang.datastructure.deque;
 
-import com.yang.datastructure.deque.ArrayDeque1;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;

@@ -1,5 +1,4 @@
-package com.yang.datastructer.linkedlist;
-import com.yang.datastructure.linkedlist.SinglyLinkedListSentinel;
+package com.yang.datastructure.linkedlist;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

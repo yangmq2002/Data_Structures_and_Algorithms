@@ -1,6 +1,5 @@
-package com.yang.datastructer.queue;
+package com.yang.datastructure.queue;
 
-import com.yang.datastructure.queue.ArrayQueue3;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

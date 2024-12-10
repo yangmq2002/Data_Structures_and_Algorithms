@@ -1,6 +1,5 @@
-package com.yang.datastructer.stack;
+package com.yang.datastructure.stack;
 
-import com.yang.datastructure.stack.E02Leetcode150;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

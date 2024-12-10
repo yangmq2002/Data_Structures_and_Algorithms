@@ -1,4 +1,4 @@
-package com.yang.datastructer.array;
+package com.yang.datastructure.array;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.util.StopWatch;

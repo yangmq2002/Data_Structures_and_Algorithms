@@ -1,6 +1,5 @@
-package com.yang.datastructer.stack;
+package com.yang.datastructure.stack;
 
-import com.yang.datastructure.stack.LinkedListStack;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
