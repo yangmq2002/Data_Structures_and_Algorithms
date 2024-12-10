@@ -1,6 +1,6 @@
 package com.yang.datastructure.linkedlist;
 
-import com.itheima.datastructure.linkedlist.ListNode;
+import com.yang.datastructure.linkedlist.ListNode;
 
 public class E02Leetcode203 {
     /**

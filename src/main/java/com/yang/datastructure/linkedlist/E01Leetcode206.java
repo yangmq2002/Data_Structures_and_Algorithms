@@ -1,6 +1,6 @@
 package com.yang.datastructure.linkedlist;
 
-import com.itheima.datastructure.linkedlist.ListNode;
+import com.yang.datastructure.linkedlist.ListNode;
 
 /**
  * 反转链表

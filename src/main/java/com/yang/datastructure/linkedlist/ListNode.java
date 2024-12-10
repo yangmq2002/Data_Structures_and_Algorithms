@@ -1,4 +1,4 @@
-package com.itheima.datastructure.linkedlist;
+package com.yang.datastructure.linkedlist;
 
 /**
  * Leetcode 很多链表题目用到的节点类
