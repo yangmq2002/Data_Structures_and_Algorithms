@@ -15,7 +15,7 @@ public class PriorityQueue2<E extends Priority> implements Queue<E> {
         array = new Priority[capacity];
     }
 
-
+    // O(N)
     @Override
     public boolean offer(E value) {
         if (isFull()) return false;

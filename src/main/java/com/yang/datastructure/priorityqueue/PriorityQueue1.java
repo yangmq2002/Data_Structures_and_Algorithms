@@ -30,6 +30,7 @@ public class PriorityQueue1<E extends Priority> implements Queue<E> {
         return max;
     }
 
+    // O(n)
     @Override
     public E poll() {
         if (isEmpty()) return null;
