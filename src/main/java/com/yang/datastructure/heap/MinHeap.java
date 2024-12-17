@@ -135,6 +135,10 @@ public class MinHeap {
         array[j] = t;
     }
 
+    public boolean isFull() {
+        return size == array.length;
+    }
+
     public static void main(String[] args) {
         int[] array = {2, 3, 1, 7, 6, 5, 4};
         MinHeap maxHeap = new MinHeap(array);
@@ -146,5 +150,4 @@ public class MinHeap {
         }
         System.out.println(Arrays.toString(maxHeap.array));
     }
-
 }
