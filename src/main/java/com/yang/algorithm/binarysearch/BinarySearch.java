@@ -165,7 +165,7 @@ public class BinarySearch {
             } else {
                 // 记录后选位置
                 candidate = m;
-                j = m + 1;
+                i = m + 1;
             }
         }
 
