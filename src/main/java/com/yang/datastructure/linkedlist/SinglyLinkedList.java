@@ -95,7 +95,7 @@ public class SinglyLinkedList implements Iterable<Integer> {  // 整体
         }
         before.accept(curr.value);
         recursion(curr.next, before, after);
-        before.accept(curr.value);
+        after.accept(curr.value);
     }
 
     /**
