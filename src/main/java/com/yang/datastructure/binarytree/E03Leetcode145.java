@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * 二叉树前序遍历（值，左，右）
+ * 二叉树后序遍历（值，左，右）
  */
 public class E03Leetcode145 {
     public List<Integer> preorderTraversal(TreeNode root) {
@@ -33,7 +33,7 @@ public class E03Leetcode145 {
             } else {
                 TreeNode peek = stack.peek();  // 栈顶元素
                 // 没有右子树
-                if (peek.right == null) {  // 右子树处理完成
+                if (peek.right == null) {
                     colorPrintln("中:" + peek.val, 36);
                     pop = stack.pop();
                     colorPrintln("后:" + pop.val, 34);
