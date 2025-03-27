@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * 二叉树前序遍历（值，左，右）
+ * 二叉树后序遍历（值，左，右）
  */
 public class E03Leetcode145 {
     public List<Integer> preorderTraversal(TreeNode root) {
