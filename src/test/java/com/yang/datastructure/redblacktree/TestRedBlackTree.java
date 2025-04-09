@@ -1,6 +1,6 @@
 package com.yang.datastructure.redblacktree;
 
-import com.itheima.datastructure.redblacktree.RedBlackTree.Node;
+import com.yang.datastructure.redblacktree.RedBlackTree.Node;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -8,8 +8,8 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.concurrent.ThreadLocalRandom;
 
-import static com.itheima.datastructure.redblacktree.RedBlackTree.Color.BLACK;
-import static com.itheima.datastructure.redblacktree.RedBlackTree.Color.RED;
+import static com.yang.datastructure.redblacktree.RedBlackTree.Color.BLACK;
+import static com.yang.datastructure.redblacktree.RedBlackTree.Color.RED;
 import static org.junit.jupiter.api.Assertions.*;
 
 class TestRedBlackTree {
