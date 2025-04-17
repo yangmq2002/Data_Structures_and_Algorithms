@@ -7,6 +7,46 @@ import java.util.Arrays;
  * <h3>基数排序 最低有效数字 LSD(Least significant digit)</h3>
  */
 public class RadixSort {
+    /*
+        110 088 009
+
+        0   088 009
+        1   110
+        2
+        3
+        4
+        5
+        6
+        7
+        8
+        9
+        088 009 110 第一轮
+
+        0   009
+        1   110
+        2
+        3
+        4
+        5
+        6
+        7
+        8   088
+        9
+        009 110 088 第二轮
+
+        0   110
+        1
+        2
+        3
+        4
+        5
+        6
+        7
+        8   088
+        9   009
+        110 088 009
+     */
+
 
     public static void radixSort(String[] a, int length) {
         // 1. 准备桶
