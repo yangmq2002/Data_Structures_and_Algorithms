@@ -14,6 +14,10 @@ public class DynamicArray implements Iterable<Integer> {
     private int capacity = 8;  // 容量
     private int[] array = {};
 
+    public int[] array() {
+        return Arrays.copyOf(array, size);
+    }
+
     /**
      * 向最后位置 [size] 添加元素
      *
@@ -66,6 +70,7 @@ public class DynamicArray implements Iterable<Integer> {
 
     /**
      * 删除元素
+     *
      * @param index: 删除元素的索引
      * @return: 被删除的元素
      */
@@ -73,7 +78,7 @@ public class DynamicArray implements Iterable<Integer> {
         int removed = array[index];
 
         if (index < size - 1) {
-            System.arraycopy(array, index+1, array, index, size - index - 1);
+            System.arraycopy(array, index + 1, array, index, size - index - 1);
         }
         size--;
         return removed;

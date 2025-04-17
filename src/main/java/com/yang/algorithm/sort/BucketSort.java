@@ -1,6 +1,6 @@
 package com.yang.algorithm.sort;
 
-import com.itheima.datastructure.array.DynamicArray;
+import com.yang.datastructure.array.DynamicArray;
 
 import java.util.Arrays;
 
