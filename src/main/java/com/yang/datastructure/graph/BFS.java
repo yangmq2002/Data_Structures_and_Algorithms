@@ -4,9 +4,9 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * <h3>深度优先搜索 Depth-first search</h3>
+ * <h3>广度优先搜索 Breadth-first search</h3>
  */
-public class DFS {
+public class BFS {
 
     public static void main(String[] args) {
         Vertex v1 = new Vertex("v1");
@@ -30,32 +30,21 @@ public class DFS {
         v5.edges = List.of();
         v6.edges = List.of(new Edge(v5, 9));
 
-        dfs2(v1);
+        bfs(v1);
     }
 
-    private static void dfs2(Vertex v) {
-        LinkedList<Vertex> stack = new LinkedList<>();
-        stack.push(v);
-
-        while (!stack.isEmpty()) {
-            Vertex pop = stack.pop();
-            pop.visited = true;
-            System.out.println(pop.name);
-            for (Edge edge : pop.edges) {
-                if (!edge.linked.visited) {
-                    stack.push(edge.linked);
-                }
-            }
-        }
-    }
-
-    private static void dfs(Vertex v) {
+    private static void bfs(Vertex v) {
+        LinkedList<Vertex> queue = new LinkedList<>();
         v.visited = true;
-        System.out.println(v.name);
-
-        for (Edge edge : v.edges) {
-            if (!edge.linked.visited) {
-                dfs(edge.linked);
+        queue.offer(v);
+        while (!queue.isEmpty()) {
+            Vertex poll = queue.poll();
+            System.out.println(poll.name);
+            for (Edge edge : poll.edges) {
+                if (!edge.linked.visited) {
+                    edge.linked.visited = true;
+                    queue.offer(edge.linked);
+                }
             }
         }
     }
