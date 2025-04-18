@@ -10,8 +10,8 @@ public class Vertex {
     public List<Edge> edges;
 
     boolean visited; // 是否被访问过，用在 BFS 和 DFS
-//    int inDegree; // 入度，用在拓扑排序
-//    int status; // 状态 0-未访问 1-访问中 2-访问过，用在拓扑排序
+    int inDegree; // 入度，用在拓扑排序
+    int status; // 状态 0-未访问 1-访问中 2-访问过，用在拓扑排序
 //
 //    int dist = INF; // 距离
 //    static final Integer INF = Integer.MAX_VALUE;
