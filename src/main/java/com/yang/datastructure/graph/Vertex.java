@@ -12,10 +12,10 @@ public class Vertex {
     boolean visited; // 是否被访问过，用在 BFS 和 DFS
     int inDegree; // 入度，用在拓扑排序
     int status; // 状态 0-未访问 1-访问中 2-访问过，用在拓扑排序
-//
-//    int dist = INF; // 距离
-//    static final Integer INF = Integer.MAX_VALUE;
-//    Vertex prev = null; // 记录从何而来
+
+    int dist = INF; // 距离
+    static final Integer INF = Integer.MAX_VALUE;
+    Vertex prev = null; // 记录从何而来
 
     public Vertex(String name) {
         this.name = name;
@@ -25,14 +25,14 @@ public class Vertex {
         return name;
     }
 
-//    @Override
-//    public String toString() {
-//        String n = name;
-//        if (visited) {
-//            n = "\u001B[31m" + name + "\u001B[0m";
-//        }
-//        return n + '(' + (dist == Integer.MAX_VALUE ? "∞" : String.valueOf(dist)) + ") <- " + (prev == null ? "null" : prev.name);
-//    }
+    @Override
+    public String toString() {
+        String n = name;
+        if (visited) {
+            n = "\u001B[31m" + name + "\u001B[0m";
+        }
+        return n + '(' + (dist == Integer.MAX_VALUE ? "∞" : String.valueOf(dist)) + ") <- " + (prev == null ? "null" : prev.name);
+    }
 //
 //    @Override
 //    public boolean equals(Object o) {
